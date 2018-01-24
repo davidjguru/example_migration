@@ -1,0 +1,39 @@
+id: article
+label: Articles migration
+migration_group: example_migration
+dependencies:
+  enforced:
+    module:
+      - example_migration
+source:
+  plugin: example_migration_article
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  uid:
+    plugin: migration_lookup
+    migration: user
+    source: author
+    no_stub: true
+  sticky:
+    plugin: default_value
+    default_value: 0
+  langcode: constants/default_langcode
+  status:
+    plugin: default_value
+    default_value: 1
+  title: title
+  body/format: constants/default_format
+  body/value: body
+  field_tags:
+    plugin: migration_lookup
+    migration: tag
+    source: tags
+    no_stub: true
+destination:
+  plugin: entity:node
+migration_dependencies:
+  required:
+    - user
+    - tag

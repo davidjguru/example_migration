@@ -1,0 +1,16 @@
+id: tag
+label: Tags migration
+migration_group: example_migration
+dependencies:
+  enforced:
+    module:
+      - example_migration
+source:
+  plugin: example_migration_tag
+process:
+  vid:
+    plugin: default_value
+    default_value: tags
+  name: title
+destination:
+  plugin: entity:taxonomy_term

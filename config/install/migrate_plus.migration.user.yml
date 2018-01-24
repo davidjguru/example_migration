@@ -1,0 +1,20 @@
+id: user
+label: Users migration
+migration_group: example_migration
+dependencies:
+  enforced:
+    module:
+      - example_migration
+source:
+  plugin: example_migration_user
+process:
+  name: username
+  pass: password
+  mail: email
+  status:
+    plugin: default_value
+    default_value: 1
+  langcode: constants/default_langcode
+  field_user_full_name: name
+destination:
+  plugin: entity:user

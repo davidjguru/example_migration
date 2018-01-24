@@ -1,0 +1,13 @@
+id: example_migration
+label: Example migration
+description: Example migration for Drupal Sevilla sesion.
+source_type: MySQL
+shared_configuration:
+  source:
+    constants:
+      default_langcode: en
+      default_format: 'basic_html'
+dependencies:
+  enforced:
+    module:
+      - example_migration

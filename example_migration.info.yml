@@ -1,0 +1,9 @@
+name: Example migration
+type: module
+description: Example code for Drupal Sevilla sesion.
+core: 8.x
+package: Custom
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_tools
+  - drupal:migrate_plus
